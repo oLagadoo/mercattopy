@@ -5,6 +5,10 @@
 
 <h3 class="mb-4">Produtos</h3>
 
+<a href="{% url 'product_create' %}" class="btn btn-success mb-3">
+    Novo Produto
+</a>
+
 <table class="table table-striped shadow-sm">
     <thead class="table-dark">
         <tr>
@@ -13,6 +17,7 @@
             <th>Preço</th>
             <th>Estoque</th>
             <th>Status</th>
+            <th>Ações</th>
         </tr>
     </thead>
     <tbody>
@@ -28,6 +33,17 @@
                 {% else %}
                     <span class="badge bg-danger">Inativo</span>
                 {% endif %}
+            </td>
+            <td>
+                <a href="{% url 'product_update' product.pk %}"
+                   class="btn btn-sm btn-warning">
+                    Editar
+                </a>
+
+                <a href="{% url 'product_delete' product.pk %}"
+                   class="btn btn-sm btn-danger">
+                    Excluir
+                </a>
             </td>
         </tr>
         {% endfor %}
