@@ -20,5 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('catalog.urls')),
+<<<<<<< HEAD
     path('vendas/', include('sales.urls')),
+=======
+>>>>>>> 0d532a2f5593e5908abcad458b9ada6697aaf439
 ]
