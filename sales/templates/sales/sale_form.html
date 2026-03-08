@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Registrar Venda</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div>
+        <label>Produto</label>
+        <select name="product">
+            {% for product in products %}
+                <option value="{{ product.id }}">
+                    {{ product.name }} (Estoque: {{ product.stock }})
+                </option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label>Quantidade</label>
+        <input type="number" name="quantity">
+    </div>
+
+    <button type="submit">Registrar Venda</button>
+
+</form>
+
+{% endblock %}
